@@ -72,9 +72,10 @@ cargo_home="$(mktemp -d -t cargo_XXXX)"
 cd "$1"
 
 echo "-----> Installing diesel_cli"
-cargo install diesel_cli --no-default-features --features postgres
+HOME="$cargo_home" cargo install diesel_cli --no-default-features --features postgres
 
 echo "-----> Running migrations"
+ll $cargo_home
 diesel migration run
 
 # Build the actual application using Cargo.
