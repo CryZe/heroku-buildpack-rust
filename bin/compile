@@ -75,8 +75,7 @@ echo "-----> Installing diesel_cli"
 HOME="$cargo_home" cargo install diesel_cli --no-default-features --features postgres
 
 echo "-----> Running migrations"
-ls $cargo_home
-diesel migration run
+"$cargo_home/bin/diesel" migration run
 
 # Build the actual application using Cargo.
 echo "-----> Building application using Cargo"
