@@ -71,4 +71,7 @@ echo "-----> Building application using Cargo"
 cd "$1"
 # To debug git issues:
 #export RUST_LOG="cargo::sources::git=debug"
+
+echo "DATABSE_URL: $DATABASE_URL"
+
 HOME="$cargo_home" cargo build --verbose --release
