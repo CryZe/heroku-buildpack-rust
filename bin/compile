@@ -73,7 +73,7 @@ cd "$1"
 
 echo "-----> Installing diesel_cli"
 if [ ! -x "$cargo_home/.cargo/bin/diesel" ]; then
-  HOME="$cargo_home" cargo install diesel_cli --no-default-features --features postgres
+  HOME="$cargo_home" cargo install diesel_cli
 else
   "diesel_cli already installed!"
 fi
