@@ -4,6 +4,7 @@ BUILD_PATH=$(cd "$1/" && pwd)
 SODIUM_LIB_DIR="$BUILD_PATH/lib"
 echo "Sodium Dir: $SODIUM_LIB_DIR"
 ls $SODIUM_LIB_DIR
+export SODIUM_LIB_DIR
 
 # Load our configuration variables.
 . "$1/RustConfig"
@@ -65,7 +66,7 @@ if [ ! -x "$rust_path/bin/rustc" ]; then
     exit 1
 fi
 PATH="$rust_path/bin:$rust_path/cargo/bin:$PATH"
-LD_LIBRARY_PATH="$rust_path/lib${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}"
+LD_LIBRARY_PATH="$SODIUM_LIB_DIR:$rust_path/lib${LD_LIBRARY_PATH+:$LD_LIBRARY_PATH}"
 export LD_LIBRARY_PATH
 echo $LD_LIBRARY_PATH
 
