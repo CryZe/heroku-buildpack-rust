@@ -3,7 +3,7 @@
 BUILD_PATH=$(cd "$1/" && pwd)
 SODIUM_LIB_DIR="$BUILD_PATH/lib"
 echo "Sodium Dir: $SODIUM_LIB_DIR"
-ls SODIUM_LIB_DIR
+ls $SODIUM_LIB_DIR
 
 # Load our configuration variables.
 . "$1/RustConfig"
