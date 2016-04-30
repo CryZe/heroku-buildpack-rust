@@ -1,5 +1,8 @@
 #!/bin/sh
 
+BUILD_PATH=$(cd "$1/" && pwd)
+SODIUM_LIB_DIR="$BUILD_PATH/lib"
+
 # Load our configuration variables.
 . "$1/RustConfig"
 
