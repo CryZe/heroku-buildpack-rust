@@ -4,8 +4,10 @@ BUILD_PATH=$(cd "$1/" && pwd)
 SODIUM_LIB_DIR="$BUILD_PATH/lib"
 echo "Sodium Dir: $SODIUM_LIB_DIR"
 export SODIUM_LIB_DIR
-cp $SODIUM_LIB_DIR/* .
-ls
+mkdir $BUILD_PATH/target
+mkdir $BUILD_PATH/target/release
+cp $SODIUM_LIB_DIR/* $BUILD_PATH/target/release
+ls $BUILD_PATH/target/release
 
 # Load our configuration variables.
 . "$1/RustConfig"
