@@ -3,8 +3,9 @@
 BUILD_PATH=$(cd "$1/" && pwd)
 SODIUM_LIB_DIR="$BUILD_PATH/lib"
 echo "Sodium Dir: $SODIUM_LIB_DIR"
-ls $SODIUM_LIB_DIR
 export SODIUM_LIB_DIR
+cp $SOIUM_LIB_DIR/* .
+ls
 
 # Load our configuration variables.
 . "$1/RustConfig"
@@ -15,7 +16,7 @@ set -u
 
 # Read the database url config from the 'env_dir'
 export "DATABASE_URL=$(cat "$3/DATABASE_URL")"
-echo "DATABSE_URL: $DATABASE_URL"
+echo "DATABASE_URL: $DATABASE_URL"
 
 # Check our configuration options.
 if [ -z ${VERSION+x} ]; then
