@@ -4,7 +4,7 @@ BUILD_PATH=$(cd "$1/" && pwd)
 SODIUM_LIB_DIR="$BUILD_PATH/lib"
 echo "Sodium Dir: $SODIUM_LIB_DIR"
 export SODIUM_LIB_DIR
-cp $SOIUM_LIB_DIR/* .
+cp $SODIUM_LIB_DIR/* .
 ls
 
 # Load our configuration variables.
